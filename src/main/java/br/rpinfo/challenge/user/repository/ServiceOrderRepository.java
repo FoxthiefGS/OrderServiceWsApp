@@ -8,7 +8,5 @@ import br.rpinfo.challenge.user.model.ServiceOrder;
 //Repositório do objeto ServiceOrder
 @Repository
 public interface ServiceOrderRepository extends JpaRepository<ServiceOrder, Integer>{
-
-	ServiceOrder findById(int id);
 	
 }

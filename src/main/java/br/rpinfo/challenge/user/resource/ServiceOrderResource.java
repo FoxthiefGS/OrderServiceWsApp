@@ -37,7 +37,7 @@ public class ServiceOrderResource {
 	@GetMapping("serviceOrder/{id}")
 	@ApiOperation(value="Retorna uma ordem de serviço a partir de seu id.")
 	public ServiceOrder getServiceOrder(@PathVariable(name = "id", required = true) int id) {
-		return serviceOrderRepository.findById(id);
+		return serviceOrderRepository.getReferenceById(id);
 	}
 	
 	@PostMapping("/serviceOrder")
@@ -49,7 +49,7 @@ public class ServiceOrderResource {
 	@DeleteMapping("/serviceOrder")
 	@ApiOperation(value="Exclui uma ordem de serviço de acordo com o id fornecido.")
 	public void deleteServiceOrder(@PathVariable(name = "id", required = true) int id) {
-		ServiceOrder serviceOrder = serviceOrderRepository.findById(id);
+		ServiceOrder serviceOrder = serviceOrderRepository.getReferenceById(id);
 		serviceOrderRepository.delete(serviceOrder);
 	}
 	
